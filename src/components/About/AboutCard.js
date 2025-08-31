@@ -11,7 +11,7 @@ function AboutCard() {
             Hi Everyone, I am <span className="purple">Muhammad Saad </span>
             from <span className="purple"> Lahore, Pakistan.</span>
             <br />
-            I am currently employed as a software developer at Juspay.
+            I am currently involed as a  developer in many language like JS ,CSS , Java C++ and also frameworks.
             <br />
             I am pursuing Bachelor's degree in Software Engineering (BSSE) at UCP
             Lahore.

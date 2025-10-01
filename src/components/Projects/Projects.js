@@ -66,6 +66,17 @@ function Projects() {
             />
           </Col>
 
+          <Col md={4} className="project-card">
+            <ProjectCard
+              imgPath={gym}
+              isBlog={false}
+              title="Currency Converter"
+              description="A modern and responsive Currency Converter • web app designed for real-time exchange rate conversion. It includes features for converting multiple currencies, viewing live exchange prices, and a clean interactive interface. Built with React.js, Tailwind CSS, and integrated with a currency API to ensure accurate, fast, and user-friendly performance across all devices."
+              ghLink="https://github.com/saadmughal0987/CurrencyConvertor"
+              demoLink="https://structure-health-and-fitness-websit.vercel.app/"
+            />
+          </Col>
+
         </Row>
       </Container>
     </Container>

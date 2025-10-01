@@ -7,6 +7,7 @@ import gym from "../../Assets/Projects/Gym.png";
 import shop from "../../Assets/Projects/shopco.png";
 import pswrd from "../../Assets/Projects/pswrdGenerator.png";
 import gym2 from "../../Assets/Projects/Gym2.png";
+import currencyConvertor from "../../Assets/Projects/currencyConvertor.png";
 
 
 function Projects() {
@@ -68,12 +69,12 @@ function Projects() {
 
           <Col md={4} className="project-card">
             <ProjectCard
-              imgPath={gym}
+              imgPath={currencyConvertor}
               isBlog={false}
               title="Currency Converter"
               description="A modern and responsive Currency Converter • web app designed for real-time exchange rate conversion. It includes features for converting multiple currencies, viewing live exchange prices, and a clean interactive interface. Built with React.js, Tailwind CSS, and integrated with a currency API to ensure accurate, fast, and user-friendly performance across all devices."
               ghLink="https://github.com/saadmughal0987/CurrencyConvertor"
-              demoLink="https://structure-health-and-fitness-websit.vercel.app/"
+              demoLink="https://currency-convertor-iota-ivory.vercel.app/"
             />
           </Col>
 

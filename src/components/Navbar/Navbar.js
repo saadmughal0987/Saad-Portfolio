@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import Navbar from "react-bootstrap/Navbar";
 import './Navbar.css';
 import Nav from "react-bootstrap/Nav";
@@ -13,6 +13,7 @@ import {
   AiOutlineFundProjectionScreen,
   AiOutlineUser,
   AiOutlineSafetyCertificate,
+  AiOutlineMail,
 } from "react-icons/ai";
 import { CgFileDocument } from "react-icons/cg";
 
@@ -28,7 +29,12 @@ function NavBar() {
     }
   }
 
-  window.addEventListener("scroll", scrollHandler);
+  useEffect(() => {
+    window.addEventListener("scroll", scrollHandler);
+    return () => {
+      window.removeEventListener("scroll", scrollHandler);
+    };
+  }, []);
 
   return (
     <Navbar
@@ -38,7 +44,7 @@ function NavBar() {
       className={navColour ? "sticky" : "navbar"}
     >
       <Container>
-        <Navbar.Brand href="/" className="d-flex">
+        <Navbar.Brand as={Link} to="/" className="d-flex" onClick={() => setTimeout(() => document.getElementById('home')?.scrollIntoView({ behavior: 'smooth' }), 100)}>
           <img src={logo} className="img-fluid logo" alt="brand" />
         </Navbar.Brand>
         <Navbar.Toggle
@@ -54,7 +60,14 @@ function NavBar() {
         <Navbar.Collapse id="responsive-navbar-nav">
           <Nav className="ms-auto" defaultActiveKey="#home">
             <Nav.Item>
-              <Nav.Link as={Link} to="/" onClick={() => updateExpanded(false)}>
+              <Nav.Link
+                as={Link}
+                to="/"
+                onClick={() => {
+                  updateExpanded(false);
+                  setTimeout(() => document.getElementById('home')?.scrollIntoView({ behavior: 'smooth' }), 100);
+                }}
+              >
                 <AiOutlineHome style={{ marginBottom: "2px" }} /> Home
               </Nav.Link>
             </Nav.Item>
@@ -62,8 +75,11 @@ function NavBar() {
             <Nav.Item>
               <Nav.Link
                 as={Link}
-                to="/about"
-                onClick={() => updateExpanded(false)}
+                to="/"
+                onClick={() => {
+                  updateExpanded(false);
+                  setTimeout(() => document.getElementById('about')?.scrollIntoView({ behavior: 'smooth' }), 100);
+                }}
               >
                 <AiOutlineUser style={{ marginBottom: "2px" }} /> About
               </Nav.Link>
@@ -72,8 +88,11 @@ function NavBar() {
             <Nav.Item>
               <Nav.Link
                 as={Link}
-                to="/project"
-                onClick={() => updateExpanded(false)}
+                to="/"
+                onClick={() => {
+                  updateExpanded(false);
+                  setTimeout(() => document.getElementById('projects')?.scrollIntoView({ behavior: 'smooth' }), 100);
+                }}
               >
                 <AiOutlineFundProjectionScreen style={{ marginBottom: "2px" }} />{" "}
                 Projects
@@ -93,10 +112,26 @@ function NavBar() {
             <Nav.Item>
               <Nav.Link
                 as={Link}
-                to="/certificate"
-                onClick={() => updateExpanded(false)}
+                to="/"
+                onClick={() => {
+                  updateExpanded(false);
+                  setTimeout(() => document.getElementById('certificate')?.scrollIntoView({ behavior: 'smooth' }), 100);
+                }}
               >
                 <AiOutlineSafetyCertificate style={{ marginBottom: "2px" }} /> Certificate
+              </Nav.Link>
+            </Nav.Item>
+
+            <Nav.Item>
+              <Nav.Link
+                as={Link}
+                to="/"
+                onClick={() => {
+                  updateExpanded(false);
+                  setTimeout(() => document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' }), 100);
+                }}
+              >
+                <AiOutlineMail style={{ marginBottom: "2px" }} /> Contact
               </Nav.Link>
             </Nav.Item>
 
@@ -118,3 +153,4 @@ function NavBar() {
 }
 
 export default NavBar;
+

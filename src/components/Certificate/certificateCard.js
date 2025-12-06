@@ -1,5 +1,7 @@
 import React from "react";
 import Card from "react-bootstrap/Card";
+import Button from "react-bootstrap/Button";
+import { AiOutlineEye } from "react-icons/ai";
 import './Certificate.css';
 
 function CertificateCard(props) {
@@ -11,6 +13,15 @@ function CertificateCard(props) {
         <Card.Text style={{ textAlign: "justify", flexGrow: 1 }}>
           {props.description}
         </Card.Text>
+        <Button
+          variant="primary"
+          href={props.credentialLink}
+          target="_blank"
+          rel="noopener noreferrer"
+          style={{ marginTop: "auto" }}
+        >
+          <AiOutlineEye style={{ marginRight: "8px" }} /> Show Credential
+        </Button>
       </Card.Body>
     </Card>
   );

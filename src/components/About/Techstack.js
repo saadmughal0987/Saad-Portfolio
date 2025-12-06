@@ -3,7 +3,7 @@ import { Col, Row } from "react-bootstrap";
 import './About.css';
 import { CgCPlusPlus } from "react-icons/cg";
 import { DiJavascript1, DiNodejs, DiReact, DiJava, DiHtml5 } from "react-icons/di";
-import { SiTailwindcss, SiBootstrap } from "react-icons/si";
+import { SiTailwindcss, SiBootstrap, SiExpress, SiMongodb } from "react-icons/si";
 
 function Techstack() {
   return (
@@ -16,6 +16,12 @@ function Techstack() {
       </Col>
       <Col xs={4} md={2} className="tech-icons">
         <DiNodejs />
+      </Col>
+      <Col xs={4} md={2} className="tech-icons">
+        <SiExpress />
+      </Col>
+      <Col xs={4} md={2} className="tech-icons">
+        <SiMongodb />
       </Col>
       <Col xs={4} md={2} className="tech-icons">
         <DiReact />
